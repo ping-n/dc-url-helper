@@ -5,7 +5,7 @@
 </script>
 
 <Header />
-<main class="mx-2">
+<main class="min-h-screen my-10 mx-2">
   <slot />
 </main>
 <Footer />

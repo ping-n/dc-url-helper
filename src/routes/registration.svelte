@@ -3,4 +3,8 @@
   import { registrationUrl } from "../data/data-store";
 </script>
 
+<svelte:head>
+  <title>Registation URL</title>
+</svelte:head>
+
 <Table tableData={$registrationUrl} />

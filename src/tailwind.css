@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav {
+    @apply md:ml-auto flex flex-wrap items-center text-base justify-center uppercase;
+  }
+  .nav-link {
+    @apply mr-5 text-black font-bold hover:text-blue-800;
+  }
+}
