@@ -1,2 +1,7 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import Table from "../components/Table.svelte";
+  import { data } from "../data/Main";
+</script>
+
+<h1 class="text-lg">DC URL HELPER</h1>
+<Table {data} />
