@@ -14,5 +14,9 @@
     "svelte": "^3.34.0",
     "tailwindcss": "^2.1.2"
   },
+  "engines": {
+    "node": ">=12.20.0",
+    "npm": ">=6.0.0"
+  },
   "type": "module"
 }
