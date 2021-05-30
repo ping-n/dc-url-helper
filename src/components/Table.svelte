@@ -1,5 +1,5 @@
 <script>
-  import { HEADERS } from "../data/Main";
+  export let tableData;
 </script>
 
 <div class="overflow-x-auto">
@@ -13,18 +13,19 @@
             <tr
               class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
             >
-              {#each HEADERS as header}
-                <th>{header}</th>
+              {#each Object.keys(tableData[0]) as columnHeading}
+                <th>{columnHeading}</th>
               {/each}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>{id}</th>
-              <td>{name}</td>
-              <td>{urlPath}</td>
-              <td>{note}</td>
-            </tr>
+            {#each Object.values(tableData) as row}
+              <tr>
+                {#each Object.values(row) as cell}
+                  <td>{cell}</td>
+                {/each}
+              </tr>
+            {/each}
           </tbody>
         </table>
       </div>
