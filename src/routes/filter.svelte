@@ -1,6 +1,6 @@
 <script>
-  import Table from "../components/Table.svelte";
-  import { filteredUrl } from "../store/data-store";
+  import Table from "$lib/components/Table.svelte";
+  import { filteredUrl } from "$lib/stores/data-store";
 </script>
 
 <svelte:head>

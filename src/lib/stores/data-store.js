@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import supabase from "../lib/db";
 
 export let mainUrl = writable([
   {
