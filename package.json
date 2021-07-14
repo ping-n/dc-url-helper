@@ -12,7 +12,8 @@
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.2.6",
     "svelte": "^3.34.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "@supabase/supabase-js": "^1.8.0"
   },
   "engines": {
     "node": ">=12.20.0",

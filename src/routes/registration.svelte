@@ -1,6 +1,6 @@
 <script>
   import Table from "../components/Table.svelte";
-  import { registrationUrl } from "../data/data-store";
+  import { registrationUrl } from "../store/data-store";
 </script>
 
 <svelte:head>
