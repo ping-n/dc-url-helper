@@ -15,9 +15,5 @@
     "tailwindcss": "^2.1.2",
     "@supabase/supabase-js": "^1.8.0"
   },
-  "engines": {
-    "node": ">=12.20.0",
-    "npm": ">=6.0.0"
-  },
   "type": "module"
 }
