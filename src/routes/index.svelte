@@ -1,3 +1,7 @@
+<script>
+  import { routes } from "$lib/utils/constant";
+</script>
+
 <svelte:head>
   <title>DC URL</title>
 </svelte:head>
@@ -6,16 +10,18 @@
   <h1 class="text-3xl font-bold text-center text-blue-500">DC URL HELPER</h1>
 
   <div
-    class="flex min-h-full min-w-4/5 flex-col justify-items-center text-left uppercase font-bold"
+    class="flex min-h-full min-w-4/5 flex-col justify-items-center text-left uppercase font-bold mb-4"
   >
-    <div class="main-link mt-4">
-      <a href="/main">Main URL</a>
-    </div>
-    <div class="main-link">
-      <a href="/filter">Filter URL</a>
-    </div>
-    <div class="main-link">
-      <a href="/registration">Registration URL</a>
-    </div>
+    {#each routes as route, index}
+      {#if index == 0}
+        <div class="main-link mt-5">
+          <a href={route.path}>{route.name}</a>
+        </div>
+      {:else}
+        <div class="main-link">
+          <a href={route.path}>{route.name}</a>
+        </div>
+      {/if}
+    {/each}
   </div>
 </div>
