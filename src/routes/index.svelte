@@ -1,6 +1,5 @@
 <script>
   import { routes } from "$lib/utils/constant";
-  let firstUrl = routes[0];
 </script>
 
 <svelte:head>
