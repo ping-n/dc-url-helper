@@ -11,8 +11,4 @@ export const routes = [
     name: "Registration Url",
     path: "/registration",
   },
-  {
-    name: "Talk Url",
-    path: "/talks",
-  },
 ];

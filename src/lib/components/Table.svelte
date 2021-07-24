@@ -20,7 +20,9 @@
             {#each Object.values(tableData) as row}
               <tr class="bg-gray-100 border-b border-gray-200">
                 {#each Object.values(row) as cell}
-                  <td class="px-4 py-3 break-words">{cell}</td>
+                  <td class="px-4 py-3 break-words"
+                    >{cell === null ? "" : cell}</td
+                  >
                 {/each}
               </tr>
             {/each}

@@ -1,10 +1,23 @@
 <script>
+  import supabase from "$lib/data/db";
   import Table from "$lib/components/Table.svelte";
-  import { filteredUrl } from "$lib/stores/data-store";
+
+  async function getData() {
+    const { data, error } = await supabase.from("filter").select("*");
+    if (error) throw new Error(error.message);
+    return data;
+  }
 </script>
 
 <svelte:head>
   <title>Filtered URL</title>
 </svelte:head>
 
-<Table tableData={$filteredUrl} />
+{#await getData()}
+  <p class="text-blue-500">Fetching data...</p>
+{:then data}
+  <Table tableData={data} />
+{:catch error}
+  <p>Something went wrong while fetching the data:</p>
+  <p class="text-red">{error}</p>
+{/await}
