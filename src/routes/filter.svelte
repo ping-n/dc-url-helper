@@ -1,6 +1,7 @@
 <script>
   import supabase from "$lib/data/db";
   import Table from "$lib/components/Table.svelte";
+  import Loader from "$lib/components/Loader.svelte";
 
   async function getData() {
     const { data, error } = await supabase.from("filter").select("*");
@@ -14,7 +15,7 @@
 </svelte:head>
 
 {#await getData()}
-  <p class="text-blue-500">Fetching data...</p>
+  <Loader />
 {:then data}
   <Table tableData={data} />
 {:catch error}

@@ -12,3 +12,7 @@ export const routes = [
     path: "/registration",
   },
 ];
+
+export const currentYear = new Date().getFullYear();
+
+export const fullName = "Justin Nge";
