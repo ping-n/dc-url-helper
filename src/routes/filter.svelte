@@ -1,20 +1,27 @@
-<script>
-  import supabase from "$lib/data/db";
+<script context="module">
+  import db from "$lib/data/db";
   import Table from "$lib/components/Table.svelte";
   import Loader from "$lib/components/Loader.svelte";
 
-  async function getData() {
-    const { data, error } = await supabase.from("filter").select("*");
-    if (error) throw new Error(error.message);
-    return data;
+  export async function load() {
+    const data = await db.filter.all();
+    return {
+      props: {
+        filterTable: data,
+      },
+    };
   }
 </script>
 
+<script>
+  export let filterTable;
+</script>
+
 <svelte:head>
-  <title>Filtered URL</title>
+  <title>Filter URL</title>
 </svelte:head>
 
-{#await getData()}
+{#await filterTable}
   <Loader />
 {:then data}
   <Table tableData={data} />

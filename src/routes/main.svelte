@@ -1,20 +1,27 @@
-<script>
-  import supabase from "$lib/data/db";
+<script context="module">
+  import db from "$lib/data/db";
   import Table from "$lib/components/Table.svelte";
   import Loader from "$lib/components/Loader.svelte";
 
-  async function getData() {
-    const { data, error } = await supabase.from("main").select("*");
-    if (error) throw new Error(error.message);
-    return data;
+  export async function load() {
+    const data = await db.main.all();
+    return {
+      props: {
+        mainTable: data,
+      },
+    };
   }
+</script>
+
+<script>
+  export let mainTable;
 </script>
 
 <svelte:head>
   <title>Main URL</title>
 </svelte:head>
 
-{#await getData()}
+{#await mainTable}
   <Loader />
 {:then data}
   <Table tableData={data} />
