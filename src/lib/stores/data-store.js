@@ -6,3 +6,5 @@ export let mainUrl = writable(mainUrlData);
 export let filteredUrl = writable(filteredData);
 
 export let registrationUrl = writable(registrationData);
+
+export let user = writable(false);

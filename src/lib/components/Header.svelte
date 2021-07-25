@@ -12,6 +12,7 @@
       <a href="/main" class="nav-link"> Main URL</a>
       <a href="/filter" class="nav-link">Filter URL</a>
       <a href="/registration" class="nav-link">Registration URL</a>
+      <a href="/login" class="nav-link">Login</a>
     </nav>
   </div>
 </header>
